@@ -1,0 +1,95 @@
+Designing the database schema for your project and creating an Entity-Relationship Diagram (ERD) is a significant step in the development process. Here, I will provide you with a list of database tables and their respective columns, taking into account the system requirements and use cases you've outlined. I will also indicate the relationships between the tables.
+
+**Database Tables and Features/Columns:**
+
+1. **User Table:**
+   - User_ID (Primary Key)
+   - First Name
+   - Last Name
+   - Email
+   - Password (encrypted)
+   - Contact Number
+   - Profile Picture
+   - Registration Date
+
+2. **Itinerary Table:**
+   - Itinerary_ID (Primary Key)
+   - User_ID (Foreign Key)
+   - Itinerary Name
+   - Start Date
+   - End Date
+   - Budget
+   - Collaborators (Multiple Users)
+
+3. **Destination Table:**
+   - Destination_ID (Primary Key)
+   - Destination Name
+   - Description
+   - Location (e.g., latitude and longitude)
+   - Attractions
+   - Local Cuisine
+   - Climate Information
+   - Travel Advisories
+   - Weather Data (Real-time)
+
+4. **Accommodation Table:**
+   - Accommodation_ID (Primary Key)
+   - Destination_ID (Foreign Key)
+   - Name
+   - Type (e.g., Hotel, Airbnb)
+   - Description
+   - Price
+   - Availability
+   - Booking Status
+
+5. **Transportation Table:**
+   - Transportation_ID (Primary Key)
+   - Destination_ID (Foreign Key)
+   - Mode (e.g., Flight, Train, Bus)
+   - Departure Location
+   - Arrival Location
+   - Departure Date and Time
+   - Arrival Date and Time
+   - Price
+   - Booking Status
+
+6. **Expense Table:**
+   - Expense_ID (Primary Key)
+   - Itinerary_ID (Foreign Key)
+   - Category (e.g., Accommodation, Transportation, Food)
+   - Expense Name
+   - Amount
+   - Expense Date
+
+7. **Collaboration Table:**
+   - Collaboration_ID (Primary Key)
+   - Itinerary_ID (Foreign Key)
+   - User_ID (Foreign Key)
+   - Role (e.g., Owner, Collaborator)
+
+8. **Recommendation Table:**
+   - Recommendation_ID (Primary Key)
+   - Destination_ID (Foreign Key)
+   - User_ID (Foreign Key)
+   - Recommended Places
+   - Recommended Restaurants
+   - Recommended Activities
+
+9. **Document Storage Table:**
+   - Document_ID (Primary Key)
+   - User_ID (Foreign Key)
+   - Document Name
+   - Document Type
+   - File Storage Location
+
+**Database Relationships:**
+
+- Each User can have multiple Itineraries (One-to-Many relationship).
+- Each Itinerary can have multiple Destinations (Many-to-Many relationship through an intermediate table).
+- Each Destination can have multiple Accommodations and Transportations (One-to-Many relationships).
+- Each Itinerary can have multiple Expenses (One-to-Many relationship).
+- Each Itinerary can have multiple Collaborators (Many-to-Many relationship through an intermediate table).
+- Each Destination can have multiple Recommendations (One-to-Many relationship).
+- Each User can store multiple Documents (One-to-Many relationship).
+
+This database schema allows for the efficient storage and retrieval of data, ensuring that users can manage their travel plans, collaborate with others, and access relevant information effectively. It also supports the recommendation system to enhance the travel planning experience. The relationships between tables facilitate data integrity and accessibility in accordance with your project's requirements and use cases.

@@ -1,0 +1,65 @@
+
+
+Questionnaire for Data Collection
+
+ Introduction:  Thank you for participating in this survey. Your feedback is valuable and will help us in the development of a user-centric travel planning platform. Please take a few minutes to answer the following questions honestly.
+
+ Section 1: Travel Habits and Preferences 
+
+1.1.  Demographic Information: 
+   - Age:
+   - Gender:
+   - Location (City/Country):
+
+1.2.  How often do you travel for leisure or business purposes? 
+   - [ ] Rarely
+   - [ ] Occasionally
+   - [ ] Several times a year
+   - [ ] Frequently
+
+1.3.  What types of destinations do you typically visit? (Check all that apply) 
+   - [ ] Urban/City
+   - [ ] Beach/Coastal
+   - [ ] Mountain/Nature
+   - [ ] Cultural/Historical
+   - [ ] Adventure/Outdoor
+   - [ ] Others (please specify): ________________
+
+1.4.  How do you usually plan your trips? (Select one) 
+   - [ ] Independently (without assistance)
+   - [ ] Using online travel agencies (e.g., Expedia, Booking.com)
+   - [ ] Through travel agents
+   - [ ] Other (please specify): ________________
+
+ Section 2: Travel Planning Preferences 
+
+2.1.  What are the biggest challenges you face when planning a trip? 
+
+2.2.  What features or functionalities do you consider essential in a travel planning platform? 
+
+2.3.  How important is real-time weather information for your travel plans? 
+   - [ ] Very Important
+   - [ ] Important
+   - [ ] Somewhat Important
+   - [ ] Not Important
+
+2.4.  Would you prefer a platform that offers personalized travel recommendations based on your preferences and past travel experiences? 
+   - [ ] Yes
+   - [ ] No
+   - [ ] Not Sure
+
+ Section 3: Feedback on Existing Tools 
+
+3.1.  Do you currently use any travel planning tools or websites? If yes, please specify. 
+
+3.2.  What do you like about these tools, and what improvements would you suggest? 
+
+ Section 4: Additional Comments 
+
+4.1.  Is there anything else you would like to share regarding travel planning or your expectations from a travel planning platform? 
+
+---
+
+*Thank you for completing this questionnaire. Your input is highly valuable to us. If you have any further comments or suggestions, please feel free to share them in the space provided above.*
+
+[Appendix A: Questionnaire for Data Collection](Insert_Link_To_Survey)

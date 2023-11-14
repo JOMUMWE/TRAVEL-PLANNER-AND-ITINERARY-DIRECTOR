@@ -1,0 +1,66 @@
+@startuml
+actor User
+participant Server
+database Database
+
+User -> Server : Enter registration details
+Server -> Database : Store user data
+Database -> Server : User data stored
+Server -> User : Registration complete
+
+User -> Server : Provide preferences
+Server -> Server : Generate recommendations
+Server -> User : Display recommendations
+
+User -> Server : Log in with credentials
+Server -> Database : Validate user credentials
+Database -> Server : User credentials valid
+Server -> User : Login successful
+
+User -> Server : Manage profile
+Server -> Database : Update user profile
+Database -> Server : Profile updated
+Server -> User : Profile updated successfully
+
+User -> Server : Create itinerary
+Server -> Database : Save itinerary
+Database -> Server : Itinerary saved
+Server -> User : Itinerary created successfully
+
+User -> Server : Search for destination information
+Server -> Database : Retrieve destination data
+Database -> Server : Destination data retrieved
+Server -> User : Display destination information
+
+User -> Server : Book accommodation
+Server -> Server : Search and compare accommodations
+Server -> User : Display accommodation options
+User -> Server : Select accommodation
+Server -> Server : Book selected accommodation
+Server -> User : Accommodation booked successfully
+
+User -> Server : Book transportation
+Server -> Server : Search and compare transportation options
+Server -> User : Display transportation options
+User -> Server : Select transportation
+Server -> Server : Book selected transportation
+Server -> User : Transportation booked successfully
+
+User -> Server : Set budget
+Server -> Database : Save budget information
+Database -> Server : Budget information saved
+Server -> User : Budget set successfully
+
+User -> Server : Collaborate with others
+Server -> Server : Share itinerary with others
+Server -> User : Collaborate successfully
+
+User -> Server : View weather forecasts
+Server -> Server : Retrieve weather data
+Server -> User : Display weather forecasts
+
+User -> Server : Store travel documents
+Server -> Server : Upload and store travel documents
+Server -> User : Documents stored successfully
+
+@endum
