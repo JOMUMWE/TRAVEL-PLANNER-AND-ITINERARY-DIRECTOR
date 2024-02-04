@@ -7,6 +7,8 @@ import Flights from './pages/flights'
 import Hotels from './pages/hotels'
 import axios from 'axios'
 import Toaster from 'react-hot-toast'
+import Footer from './components/Footer'
+
 
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
@@ -24,6 +26,7 @@ function App() {
       <Route path='/flights' element={<Flights />}/>
       <Route path='/hotels' element={<Hotels />}/>
     </Routes>
+    <Footer />
     </>
   )
 }
