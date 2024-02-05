@@ -34,8 +34,8 @@ export default function Login() {
   return (
     <div className="w-9/12 mx-auto flex flex-row gap-14 text-[#112211] mt-10 h-4/6">
       <div>
-        <h1 className="font-bold text-4xl text-black mb-4">Login</h1>
-        <p className="font-light text-lg ">Login to access your account</p>
+        <h1 className="font-bold text-4xl text-black mb-2">Login</h1>
+        <p className="font-light text-base ">Login to access your account</p>
         <form className="mt-10 mb-10" onSubmit={loginUser}>
           <label className="font-semibold">Email</label>
           <input className="  focus:outline-none focus:border-none focus:ring focus:ring-[#8DD3BB] mb-5 border w-full h-14 p-3 border-[#79747E] rounded" type='email' placeholder='johndoe@email.com' value={data.email} onChange={(e) => setData({...data, email:e.target.value})}/>

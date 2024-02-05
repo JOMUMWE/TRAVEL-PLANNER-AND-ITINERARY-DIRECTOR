@@ -8,7 +8,7 @@ const test = (req, res) => {
 
 const registerUser = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, phoneNumber } = req.body;
     //check if name has been entered
     if (!name) {
       return res.json({
@@ -20,6 +20,13 @@ const registerUser = async (req, res) => {
       return res.json({
         error:
           "Password is required and should be at least 6 characters length",
+      });
+    }
+    //check phonenumber
+    if(!Number(phoneNumber)){
+      return res.json({
+        error:
+          "input the correct format of phone number(numbers only)",
       });
     }
     //check email
@@ -34,6 +41,7 @@ const registerUser = async (req, res) => {
       name,
       email,
       password: hashedPassword,
+      phoneNumber
     });
 
     return res.json(user);
