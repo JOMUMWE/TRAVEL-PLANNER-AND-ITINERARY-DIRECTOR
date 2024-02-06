@@ -32,8 +32,8 @@ const registerUser = async (e) => {
 }
 
   return (
-    <div className="w-9/12 mx-auto flex flex-row gap-14 text-[#112211] mt-10 h-4/6">
-      <div className=" rounded-lg overflow-hidden object-scale-down"><img src={photo} alt="a hotel photo" width={435} /></div>
+    <section className="w-9/12 mx-auto grid grid-cols-2 gap-14 text-[#112211] mt-10 h-4/6">
+      <div className=" rounded-lg overflow-hidden object-contain"><img src={photo} alt="a hotel photo" /></div>
       <div>
         <h1 className="font-bold text-4xl text-black mb-2">Signup</h1>
         <p className="font-light text-base ">Let's get you all set up so that you can access your personal account</p>
@@ -65,6 +65,6 @@ const registerUser = async (e) => {
           <button></button>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

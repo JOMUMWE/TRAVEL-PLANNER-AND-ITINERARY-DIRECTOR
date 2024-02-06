@@ -11,6 +11,7 @@ import Footer from './components/Footer'
 import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/dashboard'
 
+
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
 

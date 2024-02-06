@@ -1,8 +1,8 @@
 import { Link  } from "react-router-dom"
 import {FaPlane , FaBed} from 'react-icons/fa6'
 
-
 export default function Navbar() {
+
   return (
     <nav className=" w-full pt-5 h-16 text-sm font-semibold text-[#112211] bg-[FFFFFF] shadow-md">
       <div className=" w-9/12 mx-auto flex flex-row justify-between h-full my-0">

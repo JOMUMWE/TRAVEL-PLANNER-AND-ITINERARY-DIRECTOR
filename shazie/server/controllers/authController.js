@@ -6,6 +6,11 @@ const test = (req, res) => {
   res.json("test is working");
 };
 
+const logoutUser = (req, res) => {
+  res.cookie("token", "", { maxAge: 1 });
+  res.json('logged out')
+};
+
 const registerUser = async (req, res) => {
   try {
     const { name, email, password, phoneNumber } = req.body;
@@ -23,10 +28,9 @@ const registerUser = async (req, res) => {
       });
     }
     //check phonenumber
-    if(!Number(phoneNumber)){
+    if (!Number(phoneNumber)) {
       return res.json({
-        error:
-          "input the correct format of phone number(numbers only)",
+        error: "input the correct format of phone number(numbers only)",
       });
     }
     //check email
@@ -41,7 +45,7 @@ const registerUser = async (req, res) => {
       name,
       email,
       password: hashedPassword,
-      phoneNumber
+      phoneNumber,
     });
 
     return res.json(user);
@@ -85,13 +89,13 @@ const loginUser = async (req, res) => {
 const getProfile = (req, res) => {
   const { token } = req.cookies;
   if (token) {
-    jwt.verify(token, process.env.JWT_SECRET, {}, (err,user)=>{
-      if(err) throw err
-      res.json(user)
+    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+      if (err) throw err;
+      res.json(user);
     });
-  }else{
-    res.json(null)
+  } else {
+    res.json(null);
   }
 };
 
-module.exports = { test, registerUser, loginUser, getProfile };
+module.exports = { test, registerUser, loginUser, getProfile, logoutUser };

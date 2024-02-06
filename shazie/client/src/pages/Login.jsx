@@ -32,7 +32,7 @@ export default function Login() {
   }
 
   return (
-    <div className="w-9/12 mx-auto flex flex-row gap-14 text-[#112211] mt-10 h-4/6">
+    <section className="w-9/12 mx-auto grid grid-cols-2 gap-14 text-[#112211] mt-10 h-4/6">
       <div>
         <h1 className="font-bold text-4xl text-black mb-2">Login</h1>
         <p className="font-light text-base ">Login to access your account</p>
@@ -56,7 +56,7 @@ export default function Login() {
           <button></button>
         </div>
       </div>
-      <div className=" rounded-lg overflow-hidden object-scale-down"><img src={photo} alt="a hotel photo" width={435} /></div>
-    </div>
+      <div className=" rounded-lg overflow-hidden object-contain"><img src={photo} alt="a hotel photo" /></div>
+    </section>
   )
 }
