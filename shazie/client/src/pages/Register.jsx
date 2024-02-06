@@ -3,6 +3,7 @@ import axios from 'axios'
 import {toast} from 'react-hot-toast'
 import {useNavigate} from 'react-router-dom'
 import photo from '../assets/kelsey-curtis--27u_GzlAFw-unsplash.jpg'
+import { Link  } from "react-router-dom"
 
 export default function Register() {
   const navigate = useNavigate()
@@ -53,6 +54,7 @@ const registerUser = async (e) => {
           <label>Password</label>
           <input className="  focus:outline-none focus:border-none focus:ring focus:ring-[#8DD3BB] mb-5 border w-full h-14 p-3 border-[#79747E] rounded" type='password' placeholder='***********' value={data.password} onChange={(e) => setData({...data, password:e.target.value})}/>
           <button className="w-full bg-[#8DD3BB] h-14 mt-8 rounded font-bold hover:bg-[#82CBB2]" type="submit">Create account</button>
+        <p className=" font-semibold text-center mt-5">Already have an account? <Link className="text-[#FF8682] hover:underline" to="/login">Login</Link></p>
         </form>
         <div className="flex flex-row items-center">
           <hr className="w-full"/>
