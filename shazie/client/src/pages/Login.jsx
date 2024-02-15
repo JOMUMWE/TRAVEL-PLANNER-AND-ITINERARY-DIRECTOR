@@ -32,7 +32,7 @@ export default function Login() {
   }
 
   return (
-    <section className="w-9/12 mx-auto grid grid-cols-2 gap-14 text-[#112211] mt-10 h-4/6">
+    <section className="w-9/12 mx-auto grid grid-cols-2 gap-14 text-[#112211] h-4/6 mt-24">
       <div>
         <h1 className="font-bold text-4xl text-black mb-2">Login</h1>
         <p className="font-light text-base ">Login to access your account</p>
@@ -47,7 +47,7 @@ export default function Login() {
         </form>
         <div className="flex flex-row items-center">
           <hr className="w-full"/>
-          <p  className="px-4 text-nowrap"> Or login with </p>
+          <p  className="px-4 text-nowrap"> OR </p>
           <hr className="w-full"/>
         </div>
         <div>

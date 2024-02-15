@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
+
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -11,14 +11,15 @@ import Footer from './components/Footer'
 import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/dashboard'
 import Weather from './weatherApp'
+
+
 axios.defaults.baseURL = 'http://localhost:8000'
 axios.defaults.withCredentials = true
 
 function App() {
-
+  
   return (
     <UserContextProvider>
-    <Navbar />
     <Toaster position='bottom-right'/>
     <Routes>
       <Route path='/' element={<Home />}/>
