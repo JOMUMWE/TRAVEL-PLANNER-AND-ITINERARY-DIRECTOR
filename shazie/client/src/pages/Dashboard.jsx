@@ -79,7 +79,7 @@ export default function Dashboard() {
           {accountCard ? accountcontent : paymentCard ? paymentcontent : historycontent}
         </main>
         
-        <button onClick={logoutUser}>Logout</button>
+        <button onClick={logoutUser} className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]'>Logout</button>
     </section>
     </>
   )
