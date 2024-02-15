@@ -22,7 +22,7 @@ export default function Account() {
                     <p className='font-semibold'>{user.name}</p>
                 </div>
                 <div>
-                    <button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md '>Change</button>
+                    <button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]'>Change</button>
                 </div>
             </div>
             <div className="flex flex-row justify-between mt-8">
@@ -31,8 +31,7 @@ export default function Account() {
                     <p className='font-semibold'>{user.email}</p>
                 </div>
                 <div>
-                    <button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md '>Change</button>
-                    <button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md ml-3'>Change</button>
+                    <button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]'>Change</button>
                 </div>
             </div>
             <div className="flex flex-row justify-between mt-8">
@@ -40,14 +39,14 @@ export default function Account() {
                     <p className='font-light text-[#112211] mb-2'>Password</p>
                     <p className='font-semibold'>*********</p>
                 </div>
-                <div><button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md '>Change</button></div>
+                <div><button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]'>Change</button></div>
             </div>       
             <div className="flex flex-row justify-between mt-8">
                 <div>
                     <p className='font-light text-[#112211] mb-2'>Phone Number</p>
                     <p className='font-semibold'>{user.phoneNmber}</p>
                 </div>
-                <div><button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md '>Change</button></div>
+                <div><button className='border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]'>Change</button></div>
             </div>
             {/* <div className="flex flex-row justify-between mt-8">
                 <div></div>
