@@ -9,6 +9,12 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
 }
+body{
+  background-color: #FAFBFC;
+}
+.selected{
+  border-bottom: 4px solid #8DD3BB;
+}
 section{
   width: 75%;
 }

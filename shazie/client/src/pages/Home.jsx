@@ -1,15 +1,25 @@
-import {useContext} from 'react'
 import Navbar from '../components/Navbar'
-import {UserContext} from '../../context/userContext'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
+
 
 export default function Home() {
-  const {user} = useContext(UserContext)
-  console.log(user)
+  
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    if (!user) {
+      axios.get("/profile").then(({ data }) => {
+        setUser(data);
+      });
+    }
+  }, []);  
   const logged = user ? true : false
+  
   return (
     <>
     <Navbar log={logged}/>
-    <div>home</div>
+    <div>hi</div>
     </>
   )
 }
