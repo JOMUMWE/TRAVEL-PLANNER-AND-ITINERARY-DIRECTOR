@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import { FaPenToSquare, FaPlane, FaBed } from "react-icons/fa6";
+import { FaPenToSquare, FaPlane, FaBed, FaCirclePlus } from "react-icons/fa6";
 
 export function Account() {
   const [user, setUser] = useState("");
@@ -103,6 +103,27 @@ export function History(){
   );
 }
 export function Payment(){
-  return <div>payment</div>;
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    if (!user) {
+      axios.get("/profile").then(({ data }) => {
+        setUser(data);
+      });
+    }
+  }, []);
+  return (
+    <div>
+      <h1 className=" font-bold text-4xl mb-5">Payment Methods</h1>
+      <div className="shadow rounded-xl p-5 bg-white h-56 flex flex-row flex-wrap">
+        <button className="h-full w-1/3 border-dashed border-2 border-[#8DD3BB] rounded-xl text-center hover:bg-[#e0e2e3] hover:border-solid hover:border-[#8DD3BB] hover:text-lg">
+          <FaCirclePlus
+            stroke="2px"
+            className="w-10 h-10 text-[#8DD3BB] mx-auto"
+          />
+          Add a new card
+        </button>
+      </div>
+    </div>
+  );
 }
 
