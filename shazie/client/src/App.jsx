@@ -7,12 +7,13 @@ import Flights from './pages/flights'
 import Hotels from './pages/hotels'
 import axios from 'axios'
 import {Toaster} from 'react-hot-toast'
-import Footer from './components/Footer'
+
 import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/dashboard'
 import Weather from './weatherApp'
 import Forgot from './pages/forgotPassword'
 import VerifyPage from './pages/verifyPage'
+import UserUpdate from './pages/userUpdate'
 
 
 axios.defaults.baseURL = 'http://localhost:8000'
@@ -33,8 +34,8 @@ function App() {
         <Route path="/weather" element={<Weather />} />
         <Route path="/forgot" element={<Forgot />} />
         <Route path='/verify' element={<VerifyPage/>} />
+        <Route path="/updateUser" element={<UserUpdate />} />
       </Routes>
-      <Footer />
     </UserContextProvider>
   );
 }

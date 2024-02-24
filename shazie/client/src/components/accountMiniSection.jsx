@@ -1,9 +1,12 @@
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { FaPenToSquare, FaPlane, FaBed, FaCirclePlus } from "react-icons/fa6";
 
+
 export function Account() {
+  const navigate = useNavigate()
   const [user, setUser] = useState("");
   useEffect(() => {
     if (!user) {
@@ -22,7 +25,10 @@ export function Account() {
             <p className="font-semibold">{user.name}</p>
           </div>
           <div>
-            <button className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]">
+            <button
+              onClick={() => navigate("/updateUser")}
+              className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
+            >
               <FaPenToSquare className="w-3 h-3 inline mr-2" />
               Change
             </button>
@@ -34,7 +40,10 @@ export function Account() {
             <p className="font-semibold">{user.email}</p>
           </div>
           <div>
-            <button className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]">
+            <button
+              onClick={() => navigate("/updateUser")}
+              className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
+            >
               <FaPenToSquare className="w-3 h-3 inline mr-2" />
               Change
             </button>
@@ -46,7 +55,10 @@ export function Account() {
             <p className="font-semibold">*********</p>
           </div>
           <div>
-            <button className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]">
+            <button
+              onClick={() => navigate("/updateUser")}
+              className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
+            >
               <FaPenToSquare className="w-3 h-3 inline mr-2" />
               Change
             </button>
@@ -58,7 +70,10 @@ export function Account() {
             <p className="font-semibold">{user.phoneNmber}</p>
           </div>
           <div>
-            <button className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]">
+            <button
+              onClick={() => navigate("/updateUser")}
+              className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
+            >
               <FaPenToSquare className="w-3 h-3 inline mr-2" />
               Change
             </button>

@@ -8,6 +8,7 @@ import { FaPen } from "react-icons/fa6";
 import { FaCloudArrowUp } from "react-icons/fa6";
 import { useState } from "react";
 import { useEffect } from "react";
+import Footer from "../components/Footer";
 
 export default function Dashboard() {
   const [accountCard, setAccountCard] = useState(true);
@@ -23,16 +24,7 @@ export default function Dashboard() {
   }, []);
   const logged = user ? true : false;
   const navigate = useNavigate();
-  const logoutUser = (e) => {
-    e.preventDefault();
-    try {
-      axios.get("/logout").then(() => {
-        navigate("/login");
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  
   const accountHandler = () => {
     setHistoryCard(false);
     setPaymentCard(false);
@@ -113,14 +105,8 @@ export default function Dashboard() {
         <main className="w-full mt-8">
           {accountCard ? <Account /> : paymentCard ? <Payment /> : <History />}
         </main>
-
-        <button
-          onClick={logoutUser}
-          className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
-        >
-          Logout
-        </button>
       </section>
+      <Footer />
     </>
   );
 }

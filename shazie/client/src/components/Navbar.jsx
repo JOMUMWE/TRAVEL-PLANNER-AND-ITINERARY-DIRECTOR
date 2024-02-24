@@ -3,9 +3,23 @@ import { FaPlane, FaBed } from "react-icons/fa6";
 import axios from "axios";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaUser } from "react-icons/fa6";
 
 function Navbar(props) {
+  const navigate = useNavigate();
   const [user, setUser] = useState("");
+  const [drop, setDrop] = useState(false);
+  const logoutUser = (e) => {
+    e.preventDefault();
+    try {
+      axios.get("/logout").then(() => {
+        navigate("/login");
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     if (!user) {
       axios.get("/profile").then(({ data }) => {
@@ -51,12 +65,38 @@ function Navbar(props) {
             </Link>
           </div>
         ) : (
-        <div className="flex flex-row py-2">
-          <div className="w-8 h-8 bg-slate-400 rounded-full">pic</div>
-          <h1 className="border-l-2">{user.name}</h1>
+          <div
+            className="flex flex-row py-2 px-2 hover:bg-[#c5c7c9ea] hover:cursor-pointer hover:rounded"
+            onClick={() => {
+              setDrop((drop) => !drop);
+            }}
+          >
+            <div className="w-8 h-8 bg-slate-400 rounded-full">pic</div>
+            <h1 className="border-l-2">{user.name}</h1>
           </div>
         )}
       </div>
+      {drop && (
+        <div
+          id="dropdownmenu"
+          className="flex flex-col bg-[#ffffffd8] rounded-xl p-5 shadow-xl text-sm"
+        >
+          <div className="flex flex-row py-2">
+            <div className="w-8 h-8 bg-slate-400 rounded-full">pic</div>
+            <h1 className="border-l-2">{user.name}</h1>
+          </div>
+          <hr className="text-[#c5c7c9ea]" />
+          <Link to="/dashboard" className="mt-5 mb-5 flex flex-row hover:underline">
+            <FaUser className="w-5 h-5 mr-3" /> My Account
+          </Link>
+          <button
+            onClick={logoutUser}
+            className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
+          >
+            Logout
+          </button>
+        </div>
+      )}
     </nav>
   );
 }

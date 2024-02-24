@@ -19,8 +19,8 @@ const registerUser = async (req, res) => {
       return res.json({
         error: "name is required",
       });
-      //check if passowrd is good
     }
+    //check if passowrd is good
     if (!password || password.length < 6) {
       return res.json({
         error:
@@ -98,4 +98,36 @@ const getProfile = (req, res) => {
   }
 };
 
-module.exports = { test, registerUser, loginUser, getProfile, logoutUser };
+const updateUser = async (req,res) => {
+  const { name, password, phoneNumber, id } = req.body;
+  if (!password || password.length < 6) {
+    return res.json({
+      error: "Password is required and should be at least 6 characters length",
+    });
+  }
+  //check if passowrd is good
+  if (!password || password.length < 6) {
+    return res.json({
+      error: "Password is required and should be at least 6 characters length",
+    });
+  }
+  const hashedPassword = await hashPassword(password);
+  try {
+    await User.updateOne(
+      { _id: id },
+      {
+        $set: {
+          name: name,
+          password: hashedPassword,
+          phoneNumber: phoneNumber,
+        },
+      }
+    );
+    return res.json({ status: "ok", data: "updated" });
+  } catch (error) {
+    return res.json({ error: error });
+  }
+}
+
+
+module.exports = { test, registerUser, loginUser, getProfile, logoutUser, updateUser };
