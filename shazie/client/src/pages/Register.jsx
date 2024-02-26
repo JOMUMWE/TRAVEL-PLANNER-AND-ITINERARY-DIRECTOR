@@ -33,7 +33,7 @@ const registerUser = async (e) => {
 }
 
   return (
-    <section className="w-9/12 mx-auto grid grid-cols-2 gap-14 text-[#112211] mt-10 h-4/6">
+    <section className="w-9/12 mx-auto grid grid-cols-2 gap-14 text-[#112211] h-4/6 mt-24">
       <div className=" rounded-lg overflow-hidden object-contain"><img src={photo} alt="a hotel photo" /></div>
       <div>
         <h1 className="font-bold text-4xl text-black mb-2">Signup</h1>
@@ -58,7 +58,7 @@ const registerUser = async (e) => {
         </form>
         <div className="flex flex-row items-center">
           <hr className="w-full"/>
-          <p  className="px-4 text-nowrap"> Or Signup with </p>
+          <p  className="px-4 text-nowrap">OR</p>
           <hr className="w-full"/>
         </div>
         <div>

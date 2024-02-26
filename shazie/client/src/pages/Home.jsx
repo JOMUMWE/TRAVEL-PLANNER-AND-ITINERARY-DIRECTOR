@@ -1,7 +1,25 @@
+import Navbar from '../components/Navbar'
+import { useState } from 'react';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 
-export default function home() {
+export default function Home() {
+  
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    if (!user) {
+      axios.get("/profile").then(({ data }) => {
+        setUser(data);
+      });
+    }
+  }, []);  
+  const logged = user ? true : false
+  
   return (
-    <div>home</div>
+    <>
+    <Navbar log={logged}/>
+    <div>hi</div>
+    </>
   )
 }

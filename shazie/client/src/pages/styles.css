@@ -1,0 +1,136 @@
+.flexbox-container{
+    display: flex;
+    margin: 30px;   
+}
+.image-flex{
+    display: flex;
+    justify-content: space-between;
+    align-content: flex-end;
+}
+.left-container{
+    height: 380px;
+    width: 100%;
+}
+.right-container{
+    height: auto;
+}
+#back{
+     vertical-align: middle;
+     display: inline;
+}
+a:link{
+    text-decoration: none;
+    color: black;
+}
+body{
+    font-family:'Montserrat', 'sans-serif';
+}
+.sentences{
+    font-size: 1.3vw;
+    font-weight: normal;
+}
+fieldset{
+    padding: 10px;
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.submit{
+    width: 100%;
+    background-color: #5ce1e6;
+    color: black; 
+    padding: 15px;
+    margin:25px 0px;
+    border: 2px solid #5ce1e6;
+    border-radius: 4px;
+    font-size: large;
+}
+.forgotPass-option {
+    display: flex;
+    flex-direction: row;
+  }
+  .forgotPass-option:before, .forgotPass-option:after{
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid;
+    margin: auto;
+  }
+  .forgotPass-option:before {
+    margin-right: 10px
+  }
+  .forgotPass-option:after {
+    margin-left: 10px
+  }
+  .altLogImg{
+    border: 1px solid #5ce1e6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    align-self: flex-end;
+    width: 160px;
+    height: 50px;
+    margin-top: 15px;
+    padding: 10px;
+  }
+  #emailHold, #codeHold{
+    height: 40px;
+    width: 100%;
+    margin: 0px;
+    border: 0px;
+    outline: none;
+
+  }
+  #resend{
+    color: red;
+  }
+  form div{
+    margin-top: 15px;
+  }
+  #hide{
+    position: absolute;
+    right: 60%;
+    top: 53.5%;
+  }
+  #hide2{
+    position: absolute;
+    right: 60%;
+    top: 68%;
+  }
+  
+  .flex-container{
+
+            display: flex;
+            background-color: #8DD3BB;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+            /* height: 250px; */
+            width: 100%;
+            margin-right: 30px;
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li{
+            padding: 5px;
+            font-size: small;
+        }
+        li.icon-list{
+            display: inline;
+            float: left;
+
+        }
+        .newsletter{
+            display: inline-block;
+            width: 75%;
+            height: 200px;
+            margin: 35px;
+            position: relative;
+            top: 100px;
+            left: 10%;
+            background-color: #CDEAE1;
+            border: 1px solid #CDEAE1;
+            border-radius: 7px;
+            z-index: 1;
+            padding-left: 8px;
+            box-sizing: border-box;
+        }
