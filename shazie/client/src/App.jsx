@@ -9,11 +9,12 @@ import axios from 'axios'
 import {Toaster} from 'react-hot-toast'
 
 import { UserContextProvider } from '../context/userContext'
-import Dashboard from './pages/dashboard'
+import Dashboard from './pages/Dashboard'
 import Weather from './weatherApp'
 import Forgot from './pages/forgotPassword'
 import VerifyPage from './pages/verifyPage'
 import UserUpdate from './pages/userUpdate'
+
 
 
 axios.defaults.baseURL = 'http://localhost:8000'

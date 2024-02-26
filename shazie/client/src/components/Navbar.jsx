@@ -33,14 +33,22 @@ function Navbar(props) {
         <div className="flex flex-nowrap h-full">
           <Link
             to="/flights"
-            className=" mr-4 h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px]"
+            className={
+              props.flights
+                ? " mr-4 h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px] border-b-[#8DD3BB] border-b-[3px]"
+                : "mr-4 h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px]"
+            }
           >
             <FaPlane className="w-5 h-5 mr-2" />
             Find Flight
           </Link>
           <Link
             to="/hotels"
-            className=" h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px]"
+            className={
+              props.hotels
+                ? " h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px] border-b-[#8DD3BB] border-b-[3px]"
+                : "h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px]"
+            }
           >
             <FaBed className="w-5 h-5 mr-2" />
             Find Stays
@@ -66,7 +74,7 @@ function Navbar(props) {
           </div>
         ) : (
           <div
-            className="flex flex-row py-2 px-2 hover:bg-[#c5c7c9ea] hover:cursor-pointer hover:rounded"
+            className="flex flex-row py-2 px-2 bg-slate-200 rounded-xl hover:bg-[#c5c7c9ea] hover:cursor-pointer mb-4"
             onClick={() => {
               setDrop((drop) => !drop);
             }}
@@ -86,7 +94,10 @@ function Navbar(props) {
             <h1 className="border-l-2">{user.name}</h1>
           </div>
           <hr className="text-[#c5c7c9ea]" />
-          <Link to="/dashboard" className="mt-5 mb-5 flex flex-row hover:underline">
+          <Link
+            to="/dashboard"
+            className="mt-5 mb-5 flex flex-row hover:underline"
+          >
             <FaUser className="w-5 h-5 mr-3" /> My Account
           </Link>
           <button

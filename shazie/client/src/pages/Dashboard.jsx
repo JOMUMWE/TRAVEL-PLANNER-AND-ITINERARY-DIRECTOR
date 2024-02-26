@@ -1,11 +1,9 @@
 import { Account, Payment, History } from "../components/accountMiniSection";
 import Navbar from "../components/Navbar";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import defaultimage from "../assets/stacked-peaks-haikei.png";
 import profpic from "../assets/kimson-doan-HD8KlyWRYYM-unsplash.jpg";
-import { FaPen } from "react-icons/fa6";
-import { FaCloudArrowUp } from "react-icons/fa6";
+import { FaPen , FaCloudArrowUp } from "react-icons/fa6";
 import { useState } from "react";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
@@ -23,7 +21,6 @@ export default function Dashboard() {
     }
   }, []);
   const logged = user ? true : false;
-  const navigate = useNavigate();
   
   const accountHandler = () => {
     setHistoryCard(false);

@@ -1,8 +1,21 @@
-
+import Navbar from "../components/Navbar";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 export default function Hotels() {
-  const logged = user ? true : false
+  const [user, setUser] = useState("");
+  useEffect(() => {
+    if (!user) {
+      axios.get("/profile").then(({ data }) => {
+        setUser(data);
+      });
+    }
+  }, []);
+  const logged = user ? true : false;
   return (
-    <div>Hotels</div>
-  )
+    <div >
+      <Navbar log={logged} flights={false} hotels={true} />
+      
+    </div>
+  );
 }
