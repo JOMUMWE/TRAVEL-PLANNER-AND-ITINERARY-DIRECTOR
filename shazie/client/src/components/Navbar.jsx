@@ -28,7 +28,7 @@ function Navbar(props) {
     }
   }, []);
   return (
-    <nav className=" w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50 bg-white">
+    <nav className = {props.home ? " w-full pt-5 h-16 text-sm font-semibold text-white top-0 left-0 right-0 z-50 " : " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50 bg-white" } >
       <div className=" w-9/12 mx-auto flex flex-row justify-between h-full my-0">
         <div className="flex flex-nowrap h-full">
           <Link
