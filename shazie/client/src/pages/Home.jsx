@@ -18,8 +18,7 @@ export default function Home() {
   
   return (
     <>
-    <Navbar log={logged}/>
-    <div>hi</div>
+      <Navbar log={logged} home={true} />
     </>
-  )
+  );
 }

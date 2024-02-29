@@ -1,4 +1,4 @@
-import { FaArrowRightArrowLeft } from "react-icons/fa6";
+import { FaArrowRightArrowLeft, FaPaperPlane } from "react-icons/fa6";
 
 
 export default function FlightSearchBar() {
@@ -8,7 +8,7 @@ export default function FlightSearchBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className=" w-9/12 mx-auto bg-white shadow rounded-xl py-8 px-6 z-100"
+      className="w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100"
       id="myheroform"
     >
       <h3 className="font-bold text-xl">Where are you flying?</h3>
@@ -16,7 +16,7 @@ export default function FlightSearchBar() {
         <fieldset className=" h-14 flex flex-row px-3 pb-2">
           <legend>From - To</legend>
           <input className="w-full h-full" type="text" />
-          <FaArrowRightArrowLeft className="w-5 h-5" />
+          <FaArrowRightArrowLeft className="w-4 h-4" />
         </fieldset>
         <fieldset className="max-w-40 ml-5 h-14  px-3 pb-2">
           <legend>Trip</legend>
@@ -36,7 +36,8 @@ export default function FlightSearchBar() {
         </fieldset>
       </div>
       <div className="flex flex-row justify-end mt-8">
-        <button className=" w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB]">
+        <button className="px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] flex flex-row justify-between align-middle text-center">
+          <FaPaperPlane className="w-4 h-4 mt-1"/>
           Show Flights
         </button>
       </div>

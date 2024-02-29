@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Space+Grotesk:wght@300..700&display=swap');
 
 
 @tailwind base;
@@ -41,18 +41,23 @@ section{
   object-position: left top;
   height: 80vh;
 }
-/* #herocontainer{
-  background: rgb(2,0,36);
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(198,235,242,0) 100%);
-} */
+#herocontainer{
+  background-image: url('./assets/rocker-sta-RSYBi_1fhfM-unsplash.jpg');
+  background-position: top;
+  background-size: cover;
+}
 #herotext{
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2, 0, 36, 0.623) 0%, rgba(198,235,242,0) 100%);
+}
+.theeffect{
   position: absolute;
   top: 20%;
   left: 12%;
 }
 .mynicefont{
-  font-family: "DM Serif Display", serif;
-  font-weight: 500;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 800;
   font-style: normal;
 }
 #myheroform{
@@ -69,3 +74,28 @@ input{
 input:focus{
   outline: none;
 }
+fieldset {
+border: #79747E 1px solid;
+}
+#cardcontainer> div:nth-of-type(1){
+  background-image: url(./assets/melbourne.avif);
+  background-position: top;
+  background-size: cover;
+}
+#cardcontainer> div:nth-of-type(2){
+  background-image: url(./assets/paris2.avif);
+  background-position: bottom;
+  background-size: cover;
+}
+#cardcontainer> div:nth-of-type(3){
+  background-image: url(./assets/london.avif);
+  background-position: left;
+  background-size: cover;
+}
+#cardcontainer> div:nth-of-type(4){
+  background-image: url(./assets/colombia.avif);
+  background-position: center;
+  background-size: cover;
+}
+
+
