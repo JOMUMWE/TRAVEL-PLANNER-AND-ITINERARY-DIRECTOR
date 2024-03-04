@@ -69,7 +69,7 @@ export default function Login() {
             Login
           </button>
           <p className=" font-semibold text-center mt-5">
-            Don't have an account?{" "}
+            Don't have an account?
             <Link className="text-[#FF8682] hover:underline" to="/register">
               Sign up
             </Link>
