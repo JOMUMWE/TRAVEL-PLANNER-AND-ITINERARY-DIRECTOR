@@ -4,8 +4,7 @@ import axios from "axios";
 import defaultimage from "../assets/stacked-peaks-haikei.png";
 import profpic from "../assets/kimson-doan-HD8KlyWRYYM-unsplash.jpg";
 import { FaPen , FaCloudArrowUp } from "react-icons/fa6";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
 
 export default function Dashboard() {
