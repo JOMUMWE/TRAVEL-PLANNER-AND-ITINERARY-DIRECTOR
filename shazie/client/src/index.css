@@ -118,7 +118,10 @@ border: #79747E 1px solid;
   background-position: center;
   background-size: cover;
 }
+#selectioncard{
+  position: absolute;
+  bottom:  -40%;
 
-
+}
 
 
