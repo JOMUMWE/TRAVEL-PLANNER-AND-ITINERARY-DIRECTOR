@@ -1,11 +1,4 @@
-<<<<<<< Updated upstream
-import Navbar from '../components/Navbar'
-import { useState } from 'react';
-import { useEffect } from 'react';
-import axios from 'axios';
 
-
-=======
 import Navbar from "../components/Navbar";
 import FlightSearchBar from "../components/flightsearch";
 import { useState } from "react";
@@ -13,10 +6,7 @@ import { useEffect } from "react";
 import axios from "axios";
 import "./home.css";
 import Footer from "../components/Footer";
-import istabul from "../assets/tienko-dima-DgoZcf_M0Kc-unsplash.jpg";
-import sydney from "../assets/dan-freeman-7Zb7kUyQg1E-unsplash.jpg";
-import baku from "../assets/lloyd-alozie-CqwICExDNu4-unsplash.jpg";
->>>>>>> Stashed changes
+
 export default function Home() {
   
   const [user, setUser] = useState("");
@@ -32,8 +22,6 @@ export default function Home() {
   return (
     <>
       <Navbar log={logged} home={true} />
-<<<<<<< Updated upstream
-=======
       <body>
         <div className="h_1"></div>
         <FlightSearchBar />
@@ -151,7 +139,6 @@ export default function Home() {
         </div>
       </body>
       <Footer />
->>>>>>> Stashed changes
     </>
   );
 }

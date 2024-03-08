@@ -2,15 +2,14 @@ import { Account, Payment, History } from "../components/accountMiniSection";
 import Navbar from "../components/Navbar";
 import axios from "axios";
 import defaultimage from "../assets/stacked-peaks-haikei.png";
-import profpic from "../assets/kimson-doan-HD8KlyWRYYM-unsplash.jpg";
-import { FaPen , FaCloudArrowUp } from "react-icons/fa6";
+import profpic from "../assets/user.png";
+import { FaPen, FaCloudArrowUp, FaX } from "react-icons/fa6";
 import { useState, useEffect } from "react";
 import Footer from "../components/Footer";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
-export default function Dashboard() {
-  const [accountCard, setAccountCard] = useState(true);
-  const [paymentCard, setPaymentCard] = useState(false);
-  const [historyCard, setHistoryCard] = useState(false);
+export default  function Dashboard() {
   const [user, setUser] = useState("");
   useEffect(() => {
     if (!user) {
@@ -19,6 +18,15 @@ export default function Dashboard() {
       });
     }
   }, []);
+  // const { user1 } = axios.post("/getprofilepic", { email: user.email });
+
+  // const mypic = user1.profilePic
+  const navigate = useNavigate()
+  const [img, setImage] = useState("");
+  const [profileform, setProfileForm] = useState(false);
+  const [accountCard, setAccountCard] = useState(true);
+  const [paymentCard, setPaymentCard] = useState(false);
+  const [historyCard, setHistoryCard] = useState(false);
   const logged = user ? true : false;
   
   const accountHandler = () => {
@@ -36,7 +44,28 @@ export default function Dashboard() {
     setHistoryCard(false);
     setPaymentCard(true);
   };
-
+  const logoutUser = () => {
+    try {
+      axios.get("/logout").then(() => {
+        navigate("/login");
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const id = user.id
+  const handleProfileChange = async (e) => {
+    e.preventDefault();
+    try {
+      const {data} = await axios.post('/updateProfilePic', {img,id})
+      if(data.data){
+        toast.success("Profile pic updated")
+        logoutUser()
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  };
   return (
     <>
       <Navbar log={logged} />
@@ -58,7 +87,42 @@ export default function Dashboard() {
                 alt="profile picture"
                 className=" w-32 h-28 object-center rounded-full border-4 border-[#FF8682]"
               />
-              <FaPen className="p-1 w-7 h-7 z-10 absolute left-3/4 top-3/4 bg-[#FF8682] rounded-full hover:cursor-pointer" />
+              <FaPen
+                className="p-1 w-7 h-7 z-10 absolute left-3/4 top-3/4 bg-[#FF8682] rounded-full hover:cursor-pointer"
+                onClick={() => setProfileForm((profileform) => !profileform)}
+              />
+              {profileform ? (
+                <form
+                  className="floatingcard rounded-xl bg-white shadow-xl p-5"
+                  onSubmit={handleProfileChange}
+                >
+                  <FaX
+                    className="w-4 h-4 float-end rounded-full hover:cursor-pointer"
+                    onClick={() =>
+                      setProfileForm((profileform) => !profileform)
+                    }
+                  />
+                  <p className="font-bold text-lg">Change profile picture</p>
+                  <input
+                    type="file"
+                    onChange={(e) => {
+                      var reader = new FileReader();
+                      reader.readAsDataURL(e.target.files[0]);
+                      reader.onload = () => {
+                        setImage(reader.result);
+                      };
+                    }}
+                  />
+                    {img =="" || null ? ""  : (<img src={img}  className="w-40"/>)}
+                  <input
+                    type="submit"
+                    value="Change"
+                    className="border-2 border-[#8DD3BB] px-4 py-2 text-sm rounded-md hover:bg-[#82CBB2]"
+                  />
+                </form>
+              ) : (
+                ""
+              )}
             </div>
           </div>
           <div className=" mt-16 text-center">

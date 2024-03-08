@@ -32,7 +32,7 @@ section{
 #dropdownmenu{
   position: absolute;
   top: 4.5rem;
-  right: 10rem;
+  right: 12rem;
   
 }
 #flightsimage{
@@ -122,6 +122,11 @@ border: #79747E 1px solid;
   position: absolute;
   bottom:  -40%;
 
+}
+.floatingcard{
+  z-index: 500;
+  position: absolute;
+  left: -75%;
 }
 
 

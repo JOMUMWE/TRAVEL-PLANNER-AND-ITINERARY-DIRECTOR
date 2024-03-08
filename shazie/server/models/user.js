@@ -8,7 +8,8 @@ const userSchema = new Schema({
         unique: true
     },
     password : String,
-    phoneNumber: String
+    phoneNumber: String,
+    profilePic:String
 })
 
 const userModel = mongoose.model('User', userSchema)
