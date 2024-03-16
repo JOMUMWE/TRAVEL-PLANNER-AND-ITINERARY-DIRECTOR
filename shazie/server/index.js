@@ -12,11 +12,10 @@ mongoose
   })
   .catch((err) => console.log("Database not connected", err));
 
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 app.use(express.urlencoded({extended: false}))
 
 app.use("/", require("./routes/authRoutes"));
-
 const port = 8000;
 app.listen(port, () => console.log(`server is running on port ${port}`));

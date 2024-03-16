@@ -11,6 +11,7 @@ body {
   margin-top: -48px;
   height: 80vh;
 }
+
 .h_nav {
   background-color: white;
   margin: 0 auto;
@@ -20,7 +21,10 @@ body {
   width: 75%;
   height: 200px;
 }
+
 .h_city{
+    margin-top: 200px ;
+
     margin-bottom: 60px;
 }
 .h_city_top {
@@ -63,6 +67,37 @@ body {
   height: 131px;
   box-shadow: whitesmoke;
   border-radius: 13px;
+
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+#comp_1{
+  background-image: url("../assets/tienko-dima-DgoZcf_M0Kc-unsplash.jpg");
+  background-position: center;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+
+}
+#comp_2{
+  background-image: url("../assets/dan-freeman-7Zb7kUyQg1E-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+#comp_3{
+  background-image: url("../assets/gerhard-reus-vPZ7YvpK8Sc-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+.h_city_grid_elements p {
+  background-color:tomato;
 }
 .h_booking {
   width: 75%;
@@ -91,6 +126,11 @@ body {
   height: 80vh;
   border-radius: 13px;
   align-items: flex-end;
+}
+
+#btn_1{
+  display: inline;
+  margin-left: 0px;
 }
 
 .h_booking_flights_content {
@@ -132,6 +172,8 @@ body {
   background-color: #3eb489;
   border-width: 2px;
   text-align: center;
+  align-content: center;
+
   padding: 5px;
 }
 .h_review {

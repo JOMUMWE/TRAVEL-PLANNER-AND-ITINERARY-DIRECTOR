@@ -6,6 +6,12 @@ const test = (req, res) => {
   res.json("test is working");
 };
 
+const getprofpic = async (req,res) => {
+  const {email} = req.body
+  const user = await User.findOne({ email });
+  res.json({ profpic:user.profilePic });
+}
+
 const logoutUser = (req, res) => {
   res.cookie("token", "", { maxAge: 1 });
   res.json('logged out')
@@ -46,6 +52,7 @@ const registerUser = async (req, res) => {
       email,
       password: hashedPassword,
       phoneNumber,
+      profilePic:""
     });
 
     return res.json(user);
@@ -67,7 +74,7 @@ const loginUser = async (req, res) => {
     const match = await comparePassword(password, user.password);
     if (match) {
       jwt.sign(
-        { email: user.email, id: user._id, name: user.name, phoneNmber: user.phoneNumber },
+        { email: user.email, id: user._id, name: user.name, phoneNmber: user.phoneNumber},
         process.env.JWT_SECRET,
         {},
         (err, token) => {
@@ -86,17 +93,34 @@ const loginUser = async (req, res) => {
   }
 };
 
-const getProfile = (req, res) => {
+const getProfile = async (req, res) => {
   const { token } = req.cookies;
   if (token) {
-    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => {
+    jwt.verify(token, process.env.JWT_SECRET, {}, (err, user) => { 
       if (err) throw err;
       res.json(user);
     });
   } else {
-    res.json(null);
+    res.json(false);
   }
 };
+
+const updateProfile = async(req,res) => {
+  const {img, id} = req.body;
+  try {
+     await User.updateOne(
+       { _id: id },
+       {
+         $set: {
+           profilePic: img
+         },
+       }
+     );
+    return res.json({ status: "ok", data: "updated" });
+  } catch (error) {
+     return res.json({ error: error });
+  }
+}
 
 const updateUser = async (req,res) => {
   const { name, password, phoneNumber, id } = req.body;
@@ -130,4 +154,4 @@ const updateUser = async (req,res) => {
 }
 
 
-module.exports = { test, registerUser, loginUser, getProfile, logoutUser, updateUser };
+module.exports = { test, registerUser, loginUser, getProfile, logoutUser, updateUser, updateProfile, getprofpic };

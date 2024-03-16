@@ -14,7 +14,7 @@ export default function Hotels() {
   const logged = user ? true : false;
   return (
     <div >
-      <Navbar log={logged} flights={false} hotels={true} />
+      <Navbar log={logged} flights={false} hotels={true}  />
       
     </div>
   );
