@@ -30,6 +30,7 @@ function Navbar(props) {
   }, []);
 
   return (
+
     <nav
       className={
         props.home
