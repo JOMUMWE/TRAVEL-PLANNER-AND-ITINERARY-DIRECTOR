@@ -11,8 +11,20 @@ body {
   margin-top: -48px;
   height: 80vh;
 }
+
+.h_nav {
+  background-color: white;
+  margin: 0 auto;
+  margin-top: -90px;
+  margin-bottom: 20px;
+  border-radius: 13px;
+  width: 75%;
+  height: 200px;
+}
+
 .h_city{
     margin-top: 200px ;
+
     margin-bottom: 60px;
 }
 .h_city_top {
@@ -55,6 +67,7 @@ body {
   height: 131px;
   box-shadow: whitesmoke;
   border-radius: 13px;
+
   display: grid;
   grid-template-columns: 2fr 3fr;
 }
@@ -114,10 +127,12 @@ body {
   border-radius: 13px;
   align-items: flex-end;
 }
+
 #btn_1{
   display: inline;
   margin-left: 0px;
 }
+
 .h_booking_flights_content {
   width: 100%;
   text-align: center;
@@ -158,6 +173,7 @@ body {
   border-width: 2px;
   text-align: center;
   align-content: center;
+
   padding: 5px;
 }
 .h_review {
