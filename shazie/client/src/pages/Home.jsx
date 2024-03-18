@@ -22,62 +22,6 @@ export default function Home() {
   return (
     <>
       <Navbar log={logged} home={true} />
-        <body>
-          <div className="h_1"></div>
-          <div className="h_nav"></div>
-          <div className="h_city">
-            <div className="h_city_top">
-              <div>
-                <h3>Plan your Perfect Trip</h3>
-                <p>
-                  Search Flights & Places Hire to our most popular destination
-                </p>
-              </div>
-              <button id="h_city_button">See More places</button>
-            </div>
-            <div className="h_city_grid">
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-              <div className="h_city_grid_elements"></div>
-            </div>
-          </div>
-          <div className="h_booking">
-            <div className="h_booking_flights">
-              <div className="h_booking_flights_content">
-                <h3>Flights</h3>
-                <p>Search Flights & Places Hire to our most popular destinations</p>
-                <button className="h_booking_content_button">Show Flights</button>
-              </div>
-            </div>
-            <div className="h_booking_hotels">
-              <div className="h_booking_hotels_content">
-              <h3>Hotels</h3>
-                <p>Search Hotels & Places Hire to our most popular destinstions</p>
-                <button className="h_booking_content_button">Show Hotels</button>
-              </div>
-            </div>
-          </div>
-          <div className="h_review">
-            <div className="h_review_top">
-              <div>
-              <h3>Reviews</h3>
-              <p>What people say about our facilities</p>
-              </div>
-              <button id = "h_review_button">See All</button>
-            </div>
-            <div className="h_review_section">
-              <div className="h_review_section_elements"></div>
-              <div className="h_review_section_elements"></div>
-              <div className="h_review_section_elements"></div>
-            </div>
-          </div>
-        </body>
       <body>
         <div className="h_1"></div>
         <FlightSearchBar />
