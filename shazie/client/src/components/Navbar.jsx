@@ -30,11 +30,10 @@ function Navbar(props) {
   }, []);
 
   return (
-
     <nav
       className={
         props.home
-          ? " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md top-0 left-0 right-0 z-50"
+          ? " w-full pt-5 h-16 text-sm font-semibold text-white shadow-md top-0 left-0 right-0 z-50"
           : " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50 bg-white"
       }
     >
@@ -70,13 +69,21 @@ function Navbar(props) {
           <div>
             <Link
               to="/login"
-              className="p-4 mr-3 hover:bg-slate-200 px-5 py-2 rounded"
+              className={
+                props.home
+                  ? "mr-3 px-5 py-2"
+                  : "p-4 mr-3 hover:bg-slate-200 px-5 py-2 rounded"
+              }
             >
               Login
             </Link>
             <Link
               to="/register"
-              className=" bg-[#112211] text-white px-5 py-2 rounded"
+              className={
+                props.home
+                  ? "bg-white text-[#112211] px-5 py-2 rounded hover:bg-slate-200"
+                  : " bg-[#112211] text-white px-5 py-2 rounded"
+              }
             >
               Sigup
             </Link>
