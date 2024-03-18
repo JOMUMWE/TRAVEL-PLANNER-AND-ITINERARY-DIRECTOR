@@ -33,7 +33,7 @@ function Navbar(props) {
     <nav
       className={
         props.home
-          ? " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50"
+          ? " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md top-0 left-0 right-0 z-50"
           : " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50 bg-white"
       }
     >

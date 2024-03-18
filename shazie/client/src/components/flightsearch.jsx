@@ -18,8 +18,7 @@ export default function FlightSearchBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100"
-      id="myheroform"
+      className="w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 myheroform"
     >
       <h3 className="font-bold text-xl">Where are you flying?</h3>
       <div className="mystyle flex flex-row">
