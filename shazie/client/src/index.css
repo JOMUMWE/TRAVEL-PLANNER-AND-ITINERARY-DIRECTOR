@@ -46,6 +46,11 @@ section{
   background-position: top;
   background-size: cover;
 }
+#herocontainerhotel{
+  background-image: url('./assets/HotelHero.avif');
+  background-position: center;
+  background-size:  cover;
+}
 #herotext{
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2, 0, 36, 0.623) 0%, rgba(198,235,242,0) 100%);
@@ -60,7 +65,7 @@ section{
   font-weight: 800;
   font-style: normal;
 }
-#myheroform{
+.myheroform{
   position: absolute;
   left: 12%;
   bottom: -10%;
