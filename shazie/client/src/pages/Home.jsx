@@ -24,7 +24,7 @@ export default function Home() {
       <Navbar log={logged} home={true} />
       <body>
         <div className="h_1"></div>
-        <FlightSearchBar />
+        <FlightSearchBar className = "h_nav" />
         <div className="h_city">
           <div className="h_city_top">
             <div>
@@ -39,8 +39,8 @@ export default function Home() {
             <div className="h_city_grid_elements">
               <div  id="comp_1"></div>
               <div>
-                <p></p>
-                <p></p>
+                <p>Istanabul , Turkey</p>
+                <p>Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
@@ -92,7 +92,8 @@ export default function Home() {
                 <p></p>
               </div>
             </div>
-            <div className="h_city_grid_elements" id="comp_9">
+            <div className="h_city_grid_elements" >
+              <div id="comp_9"></div>
               <div>
                 <p></p>
                 <p></p>
@@ -132,7 +133,7 @@ export default function Home() {
             <button id="h_review_button">See All</button>
           </div>
           <div className="h_review_section">
-            <div className="h_review_section_elements"></div>
+            <div className="h_review_section_elements" id = "hr1" ></div>
             <div className="h_review_section_elements"></div>
             <div className="h_review_section_elements"></div>
           </div>

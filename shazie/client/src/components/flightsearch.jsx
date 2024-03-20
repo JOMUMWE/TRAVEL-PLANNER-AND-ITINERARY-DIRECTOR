@@ -73,8 +73,8 @@ export default function FlightSearchBar() {
         </fieldset>
       </div>
       <div className="flex flex-row justify-end mt-8">
-        <button className="px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] flex flex-row justify-between align-middle text-center">
-          <FaPaperPlane className="w-4 h-4 mt-1" />
+        <button className="px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] flex flex-row justify-between items-center text-center text-nowrap text-sm">
+          <FaPaperPlane className="w-4 h-4 mt-1 mr-2" />
           Show Flights
         </button>
       </div>
