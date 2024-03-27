@@ -135,7 +135,6 @@ export default function Home() {
                 Search Flights & Places Hire to our most popular destinations
               </p>
               <button className="h_booking_content_button">
-                {" "}
                 Show Flights
               </button>
             </div>
