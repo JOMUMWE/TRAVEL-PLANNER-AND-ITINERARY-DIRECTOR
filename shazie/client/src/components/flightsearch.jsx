@@ -4,7 +4,7 @@ import { FaMagnifyingGlass } from "react-icons/fa6";
 import data from "../utilities/locations.json";
 import axios from "axios";
 
-export default function FlightSearchBar() {
+export default function FlightSearchBar(props) {
   const date = new Date();
   const month =
     String(date.getUTCMonth() + 1).length == 1
@@ -28,14 +28,14 @@ export default function FlightSearchBar() {
   const [Depature, setDepature] = useState("");
   const [Return, setReturn] = useState("");
   const [Class, setClass] = useState("E");
-  const [AdultNumber, setAdultNumber] = useState(1)
+  const [AdultNumber, setAdultNumber] = useState(1);
 
   const handleDepClick = () => {
     if (floatCard) {
       setFloatcard(!floatCard);
     }
-    if(floatClassCard){
-      setClassCard(!floatClassCard)
+    if (floatClassCard) {
+      setClassCard(!floatClassCard);
     }
     setFloatDateCard(!floatDateCard);
   };
@@ -60,27 +60,31 @@ export default function FlightSearchBar() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/login", {
+      const { data } = await axios.post("/getflight", {
         flightFrom,
         flightTo,
         Depature,
-        AdultNumber
+        AdultNumber,
       });
+      console.log(data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
   return (
     <form
       onSubmit={handleSubmit}
-      className={props.flightlandinggpage ? 
-        "w-[75.5%] mx-auto my-20 bg-white shadow rounded-xl py-6 px-6 z-100 "
-        :"w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 myheroform"}
+      className={
+        props.flightlandinggpage
+          ? "w-[75.5%] mx-auto my-20 bg-white shadow rounded-xl py-6 px-6 z-100 "
+          : props.home
+          ? "w-full mx-auto bg-white rounded-xl py-6 px-6 z-100 "
+          : "w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 myheroform"
+      }
     >
-      <h3 className={props.flightlandinggpage ?
-        "hidden":
-        "font-bold text-xl"}>
-        Where are you flying?</h3>
+      <h3 className={props.flightlandinggpage ? "hidden" : "font-bold text-xl"}>
+        Where are you flying?
+      </h3>
       <div className="mystyle flex flex-row">
         <fieldset className=" h-14 flex flex-row px-3 pb-2">
           <legend>From - To</legend>
@@ -95,12 +99,19 @@ export default function FlightSearchBar() {
         </fieldset>
         {floatCard ? (
           <div
-            id="selectioncard"
+            id={
+              props.flightlandinggpage
+                ? "selectioncard2"
+                : props.home
+                ? "selection3"
+                : "selectioncard"
+            }
             className="w-[30%] rounded-xl shadow-lg p-4 bg-white"
           >
             <label>From</label>
             <select
               className="w-full  bg-slate-100 rounded-xl hover:border-[#82CBB2] hover:border-2 py-4 px-5"
+              value={flightFrom}
               onChange={(e) => setFlightFrom(e.target.value)}
             >
               {data.map((item) => (
@@ -112,6 +123,7 @@ export default function FlightSearchBar() {
             <label>To</label>
             <select
               className="w-full  bg-slate-100 rounded-xl hover:border-[#82CBB2] hover:border-2 py-4 px-5"
+              value={flightTo}
               onChange={(e) => setFlightTo(e.target.value)}
             >
               {data.map((item) => (
@@ -143,7 +155,13 @@ export default function FlightSearchBar() {
           />
           {floatDateCard ? (
             <div
-              id="selectioncard"
+              id={
+                props.flightlandinggpage
+                  ? "selectioncard2"
+                  : props.home
+                  ? "selection3"
+                  : "selectioncard"
+              }
               className="w-[30%] rounded-xl shadow-lg p-4 bg-white"
             >
               <label>Depature</label>
@@ -160,7 +178,7 @@ export default function FlightSearchBar() {
                 type="date"
                 value={Return}
                 onChange={(e) => setReturn(e.target.value)}
-                min={today}
+                min={Depature}
               />
             </div>
           ) : (
@@ -177,7 +195,13 @@ export default function FlightSearchBar() {
           />
           {floatClassCard ? (
             <div
-              id="selectioncard"
+              id={
+                props.flightlandinggpage
+                  ? "selectioncard2"
+                  : props.home
+                  ? "selection3"
+                  : "selectioncard"
+              }
               className="w-[30%] rounded-xl shadow-lg p-4 bg-white"
             >
               <label>Poeple</label>
@@ -196,28 +220,36 @@ export default function FlightSearchBar() {
               >
                 <option value="A">First Class</option>
                 <option value="B">Business Class</option>
-                <option value="E">Economy Class</option>
+                <option value="E" selected>
+                  Economy Class
+                </option>
               </select>
             </div>
           ) : (
             <div className="none"></div>
           )}
         </fieldset>
-        {props.flightlandinggpage ? 
-        <button className="mt-2 ml-5 px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB]  text-center text-nowrap text-sm">
-          <FaMagnifyingGlass className="w-4 h-4 mt-1 mr-2" />
-        </button>
-        :""
-        }
-
+        {props.flightlandinggpage ? (
+          <button className="mt-2 ml-5 px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB]  text-center text-nowrap text-sm">
+            <FaMagnifyingGlass className="w-4 h-4 mt-1 mr-2" />
+          </button>
+        ) : (
+          ""
+        )}
       </div>
-      <div className={ props.flightlandinggpage ?"hidden":
-        "flex flex-row justify-end mt-8"}>
-        <button className="px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] flex flex-row justify-between items-center text-center text-nowrap text-sm">
-          <FaPaperPlane className="w-4 h-4 mt-1 mr-2" />
-
-          Show Flights
-        </button>
+      <div
+        className={
+          props.flightlandinggpage ? "hidden" : "flex flex-row justify-end mt-8"
+        }
+      >
+        <div className="flex flex-row justify-between items-center bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] px-7 py-3 hover:cursor-pointer ">
+          <input
+            type="submit"
+            className=" text-center text-nowrap text-sm  hover:cursor-pointer "
+            value="Show Flights"
+          />
+          <FaPaperPlane className="w-4 h-4 mr-2" />
+        </div>
       </div>
     </form>
   );

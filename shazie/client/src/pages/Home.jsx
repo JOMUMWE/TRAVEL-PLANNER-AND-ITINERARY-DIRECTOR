@@ -1,4 +1,4 @@
-
+import { FaPlane, FaBed } from "react-icons/fa6";
 import Navbar from "../components/Navbar";
 import FlightSearchBar from "../components/flightsearch";
 
@@ -7,9 +7,12 @@ import { useEffect } from "react";
 import axios from "axios";
 import "./home.css";
 import Footer from "../components/Footer";
+import HotelSearchBar from "../components/HotelSearch";
 
 export default function Home() {
   const [user, setUser] = useState("");
+  const[FlightsCard, setFlightsCard] = useState(true)
+  const [StaysCard, setStaysCard] = useState(false)
   useEffect(() => {
     if (!user) {
       axios.get("/profile").then(({ data }) => {
@@ -18,13 +21,36 @@ export default function Home() {
     }
   }, []);
   const logged = user ? true : false;
-
   return (
     <>
       <Navbar log={logged} home={true} />
       <body>
         <div className="h_1"></div>
-        <FlightSearchBar className = "h_nav" />
+        <div className = "h_nav px-5">
+          <nav className="w-[30%] grid grid-cols-2 mt-7 font-bold align-middle bg-white rounded-xl">
+          <button
+            onClick={()=>{ setFlightsCard(!FlightsCard); setStaysCard(false)}}
+            className={
+              FlightsCard
+                ? "py-5 px-5 hover:border-b-[#8DD3BB] hover:border-b-4 flex flex-row items-center selected"
+                : "py-5 px-5 hover:border-b-[#8DD3BB] hover:border-b-4 flex flex-row items-center"
+            }
+          >
+           <FaPlane className="w-5 h-5 mr-2"/> <p>Flights</p>
+          </button>
+          <button
+            onClick={()=>{ setStaysCard(!StaysCard); setFlightsCard(false)}}
+            className={
+              StaysCard
+                ? "py-5 px-5 hover:border-b-[#8DD3BB] hover:border-b-4 border-l-2 flex flex-row items-center selected"
+                : "py-5 px-5 hover:border-b-[#8DD3BB] hover:border-b-4 border-l-2 flex flex-row items-center"
+            }
+          >
+          <FaBed className="w-5 h-5 mr-2"/><p>Stays</p>
+          </button>
+          </nav>
+          {StaysCard ? <HotelSearchBar home={true}/> : <FlightSearchBar home={true} /> }
+        </div>
         <div className="h_city">
           <div className="h_city_top">
             <div>
@@ -109,7 +135,6 @@ export default function Home() {
                 Search Flights & Places Hire to our most popular destinations
               </p>
               <button className="h_booking_content_button">
-                {" "}
                 Show Flights
               </button>
             </div>

@@ -1,9 +1,15 @@
 import { FaBuilding, FaBed, FaCircleChevronDown } from "react-icons/fa6";
 
 
-export default function HotelSearchBar() {
+export default function HotelSearchBar(props) {
   return (
-    <form className="myheroform w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 ">
+    <form
+      className={
+        props.home
+          ? "w-full mx-auto bg-white rounded-xl py-8 px-6 z-100"
+          : "myheroform w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100"
+      }
+    >
       <h3 className="font-bold text-xl">Where are you staying?</h3>
       <div className="mystyle flex flex-row gap-5">
         <fieldset className=" h-14 flex flex-row px-3 pb-2">
