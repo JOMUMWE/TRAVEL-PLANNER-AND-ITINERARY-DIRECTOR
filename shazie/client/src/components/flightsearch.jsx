@@ -77,6 +77,8 @@ export default function FlightSearchBar(props) {
       className={
         props.flightlandinggpage
           ? "w-[75.5%] mx-auto my-20 bg-white shadow rounded-xl py-6 px-6 z-100 "
+          : props.home
+          ? "w-full mx-auto bg-white rounded-xl py-6 px-6 z-100 "
           : "w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 myheroform"
       }
     >
@@ -97,7 +99,13 @@ export default function FlightSearchBar(props) {
         </fieldset>
         {floatCard ? (
           <div
-            id={props.flightlandinggpage ? "selectioncard2" : "selectioncard"}
+            id={
+              props.flightlandinggpage
+                ? "selectioncard2"
+                : props.home
+                ? "selection3"
+                : "selectioncard"
+            }
             className="w-[30%] rounded-xl shadow-lg p-4 bg-white"
           >
             <label>From</label>
@@ -147,7 +155,13 @@ export default function FlightSearchBar(props) {
           />
           {floatDateCard ? (
             <div
-              id={props.flightlandinggpage ? "selectioncard2" : "selectioncard"}
+              id={
+                props.flightlandinggpage
+                  ? "selectioncard2"
+                  : props.home
+                  ? "selection3"
+                  : "selectioncard"
+              }
               className="w-[30%] rounded-xl shadow-lg p-4 bg-white"
             >
               <label>Depature</label>
@@ -181,7 +195,13 @@ export default function FlightSearchBar(props) {
           />
           {floatClassCard ? (
             <div
-              id={props.flightlandinggpage ? "selectioncard2" : "selectioncard"}
+              id={
+                props.flightlandinggpage
+                  ? "selectioncard2"
+                  : props.home
+                  ? "selection3"
+                  : "selectioncard"
+              }
               className="w-[30%] rounded-xl shadow-lg p-4 bg-white"
             >
               <label>Poeple</label>
