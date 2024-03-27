@@ -112,7 +112,7 @@ function Navbar(props) {
       {drop && (
         <div
           id="dropdownmenu"
-          className="flex flex-col bg-[#ffffffef] rounded-xl p-5 shadow-xl text-sm"
+          className="flex flex-col bg-[#ffffffef] rounded-xl p-5 shadow-xl text-sm text-black"
         >
           <div className="flex flex-row py-2  items-center justify-around">
             <div className="w-8 h-8 bg-slate-400 rounded-full overflow-hidden">

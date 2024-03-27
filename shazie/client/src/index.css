@@ -126,7 +126,11 @@ border: #79747E 1px solid;
 #selectioncard{
   position: absolute;
   bottom:  -40%;
-
+}
+#selectioncard2{
+  position: absolute;
+  top: 25%;
+  width: 20%;
 }
 .floatingcard{
   z-index: 500;

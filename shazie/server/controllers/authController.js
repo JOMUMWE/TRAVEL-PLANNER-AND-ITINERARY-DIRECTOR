@@ -153,19 +153,25 @@ const updateUser = async (req,res) => {
   }
 }
 const getflight = async(req,res) =>{
-  var { flightFrom, flightTo, Departure, AdultNumber} = req.body;
+  var { flightFrom, flightTo, Depature, AdultNumber} = req.body;
   var Amadeus = require("amadeus");
   var amadeus = new Amadeus({
     clientId: "uRN292AgotWGG0mxFNWyR81AEAOqcmup",
     clientSecret: "eFPH1f4VpRRU0260",
   });
-  var body = await amadeus.shopping.flightOffersSearch.get({
+  try{
+    var body = await amadeus.shopping.flightOffersSearch.get({
     originLocationCode: flightFrom,
     destinationLocationCode: flightTo,
-    departureDate: Departure,
+    departureDate: Depature,
     adults: AdultNumber,
   });
-  return res.json(body)
+  return res.json(body.data)
+  }catch(error){
+    console.log(error)
+    return res.json(error)
+  }
+  
 }
 
 module.exports = { test, registerUser, loginUser, getProfile, logoutUser, updateUser, updateProfile, getprofpic,getflight };
