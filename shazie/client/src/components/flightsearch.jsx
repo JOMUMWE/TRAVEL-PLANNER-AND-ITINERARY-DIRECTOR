@@ -1,5 +1,6 @@
 import { FaArrowRightArrowLeft, FaPaperPlane } from "react-icons/fa6";
 import { useState } from "react";
+import { FaMagnifyingGlass } from "react-icons/fa6";
 import data from "../utilities/locations.json";
 import axios from "axios";
 
@@ -72,9 +73,14 @@ export default function FlightSearchBar() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 myheroform"
+      className={props.flightlandinggpage ? 
+        "w-[75.5%] mx-auto my-20 bg-white shadow rounded-xl py-6 px-6 z-100 "
+        :"w-[75.5%] mx-auto bg-white shadow rounded-xl py-8 px-6 z-100 myheroform"}
     >
-      <h3 className="font-bold text-xl">Where are you flying?</h3>
+      <h3 className={props.flightlandinggpage ?
+        "hidden":
+        "font-bold text-xl"}>
+        Where are you flying?</h3>
       <div className="mystyle flex flex-row">
         <fieldset className=" h-14 flex flex-row px-3 pb-2">
           <legend>From - To</legend>
@@ -197,13 +203,19 @@ export default function FlightSearchBar() {
             <div className="none"></div>
           )}
         </fieldset>
+        {props.flightlandinggpage ? 
+        <button className="mt-2 ml-5 px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB]  text-center text-nowrap text-sm">
+          <FaMagnifyingGlass className="w-4 h-4 mt-1 mr-2" />
+        </button>
+        :""
+        }
+
       </div>
-      <div className="flex flex-row justify-end mt-8">
-        <button
-          className="px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] flex flex-row justify-between align-middle text-center"
-          type="submit"
-        >
-          <FaPaperPlane className="w-4 h-4 mt-1" />
+      <div className={ props.flightlandinggpage ?"hidden":
+        "flex flex-row justify-end mt-8"}>
+        <button className="px-7 py-3 w-1/6 bg-[#8DD3BB] h-12 rounded font-bold hover:bg-[#ffff] hover:ring-2 hover:ring-[#8DD3BB] flex flex-row justify-between items-center text-center text-nowrap text-sm">
+          <FaPaperPlane className="w-4 h-4 mt-1 mr-2" />
+
           Show Flights
         </button>
       </div>

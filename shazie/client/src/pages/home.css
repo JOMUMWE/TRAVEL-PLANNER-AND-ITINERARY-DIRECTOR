@@ -96,8 +96,62 @@ body {
   background-repeat: no-repeat;
   border-radius: 13px;
 }
-.h_city_grid_elements p {
-  background-color:tomato;
+#comp_4{
+  background-image: url("../assets/ahmed-yaaniu-05A3CzImkhw-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+#comp_5{
+  background-image: url("../assets/anthony-delanoix-QAwciFlS1g4-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+#comp_6{
+  background-image: url("../assets/istockphoto-946087016-1024x1024.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+#comp_7{
+  background-image: url("../assets/alex-azabache-W1Y4Y_DBGKw-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+#comp_8{
+  background-image: url("../assets/david-edelstein-N4DbvTUDikw-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+#comp_9{
+  background-image: url("../assets/christoph-schulz-7tb-b37yHx4-unsplash.jpg");
+  background-position: left;
+  background-attachment:scroll;
+  background-size:cover;
+  background-repeat: no-repeat;
+  border-radius: 13px;
+}
+.common{
+  @apply flex flex-col justify-center items-start gap-3 pl-4
+}
+.toopp{
+  @apply text-base font-bold text-[#AFB6B1]
+}
+.bottttom{
+  @apply text-xs text-[#112211] font-semibold
 }
 .h_booking {
   width: 75%;
@@ -181,7 +235,7 @@ body {
   margin: 0 auto;
 }
 .h_review_top {
-  width: 90%;
+  width: 100%;
   display: flex;
   background-color: white;
   height: 70px;
@@ -217,4 +271,27 @@ body {
     box-shadow:15px 15px 3px #8DD3BB;
     border-radius: 13px;
     height: 80vh;
+}
+#hr1{
+  background-image: url("../assets/hr1.jpg");
+  background-position: center;
+  background-attachment:scroll;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+#hr2{
+  background-image: url("../assets/hr2.jpg");
+  background-position: center;
+  background-attachment:scroll;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+#hr3{
+  background-image: url("../assets/hr3.jpg");
+  background-position: center;
+  background-attachment:scroll;
+  background-size:contain;
+  background-repeat: no-repeat;
 }
