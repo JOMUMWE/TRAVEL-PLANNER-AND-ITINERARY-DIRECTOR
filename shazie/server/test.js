@@ -34,16 +34,28 @@ var amadeus = new Amadeus({
 //     console.error(response);
 //   });
 
-amadeus.shopping.hotelOffersSearch
-  .get({
-    hotelIds: "RTPAR001",
-    adults: "2",
-    checkInDate: "2024-04-10",
-    checkOutDate: "2024-04-12",
-  })
-  .then(function (response) {
-    console.log(response.body);
-  })
-  .catch(function (response) {
-    console.error(response);
-  });
+// amadeus.shopping.hotelOffersSearch
+//   .get({
+//     hotelIds: "RTPAR001",
+//     adults: "2",
+//     checkInDate: "2024-04-10",
+//     checkOutDate: "2024-04-12",
+//   })
+//   .then(function (response) {
+//     console.log(response.body);
+//   })
+//   .catch(function (response) {
+//     console.error(response);
+//   });
+
+  // Find the cheapest flights from SYD to BKK
+amadeus.shopping.flightOffersSearch.get({
+  originLocationCode: 'SYD',
+  destinationLocationCode: 'BKK',
+  departureDate: '2024-04-01',
+  adults: '1'
+}).then(function (response) {
+  console.log(response.body);
+}).catch(function (response) {
+  console.error(response);
+})
