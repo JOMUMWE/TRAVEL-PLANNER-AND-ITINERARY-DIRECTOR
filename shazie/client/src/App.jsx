@@ -1,5 +1,4 @@
 import { Routes, Route } from 'react-router-dom'
-
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -8,7 +7,6 @@ import Hotels from './pages/hotels'
 import FlightLandingPage from './pages/FlightLandingPage'
 import axios from 'axios'
 import {Toaster} from 'react-hot-toast'
-
 import { UserContextProvider } from '../context/userContext'
 import Dashboard from './pages/Dashboard'
 import Weather from './weatherApp'

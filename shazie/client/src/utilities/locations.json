@@ -1,0 +1,69 @@
+[
+    {
+        "location":"Brisbane",
+        "IATA":"BNE"
+    },
+    {
+        "location":"Cairo",
+        "IATA":"CCE"
+    },
+    {
+        "location":"Cuba",
+        "IATA":"SCU"
+    },
+    {
+        "location":"Colombo",
+        "IATA":"BYV"
+    },
+    {
+        "location":"Dubai",
+        "IATA":"NHD"
+    },
+    {
+        "location":"London",
+        "IATA":"LON"
+    },
+    {
+        "location":"Madagascar",
+        "IATA":"TNR"
+    },
+    {
+        "location":"Moscow",
+        "IATA":"MOW"
+    },
+    {
+        "location":"Nairobi",
+        "IATA": "NBO"
+    },
+    {
+        "location":"Osaka",
+        "IATA": "KIX"
+    },
+    {
+        "location":"Paris",
+        "IATA":"POX"
+    },
+    { "location" : "Sydney",
+        "IATA": "SYD"
+    },
+    {
+        "location":"South Africa",
+        "IATA":"WSN"
+    },
+    {
+        "location":"Singapore",
+        "IATA":"SIN"
+    },
+    {
+        "location":"Tokyo",
+        "IATA":"HND"
+    },
+    {
+        "location":"Vancouver",
+        "IATA":"YVR"
+    },
+    {
+        "location":"Washington",
+        "IATA":"BWI"
+    }
+]
