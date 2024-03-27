@@ -5,6 +5,7 @@ import Login from './pages/Login'
 import Register from './pages/Register'
 import Flights from './pages/flights'
 import Hotels from './pages/hotels'
+import FlightLandingPage from './pages/FlightLandingPage'
 import axios from 'axios'
 import {Toaster} from 'react-hot-toast'
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/forgot" element={<Forgot />} />
         <Route path='/verify' element={<VerifyPage/>} />
         <Route path="/updateUser" element={<UserUpdate />} />
+        <Route path= "FlightLandingPage" element={<FlightLandingPage/>} />
       </Routes>
     </UserContextProvider>
   );

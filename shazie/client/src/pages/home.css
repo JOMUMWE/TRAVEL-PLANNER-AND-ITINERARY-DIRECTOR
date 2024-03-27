@@ -144,8 +144,14 @@ body {
   background-repeat: no-repeat;
   border-radius: 13px;
 }
-.h_city_grid_elements p {
-  background-color:tomato;
+.common{
+  @apply flex flex-col justify-center items-start gap-3 pl-4
+}
+.toopp{
+  @apply text-base font-bold text-[#AFB6B1]
+}
+.bottttom{
+  @apply text-xs text-[#112211] font-semibold
 }
 .h_booking {
   width: 75%;
@@ -268,6 +274,22 @@ body {
 }
 #hr1{
   background-image: url("../assets/hr1.jpg");
+  background-position: center;
+  background-attachment:scroll;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+#hr2{
+  background-image: url("../assets/hr2.jpg");
+  background-position: center;
+  background-attachment:scroll;
+  background-size:contain;
+  background-repeat: no-repeat;
+}
+
+#hr3{
+  background-image: url("../assets/hr3.jpg");
   background-position: center;
   background-attachment:scroll;
   background-size:contain;

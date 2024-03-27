@@ -38,65 +38,65 @@ export default function Home() {
           <div className="h_city_grid">
             <div className="h_city_grid_elements">
               <div  id="comp_1"></div>
-              <div>
-                <p>Istanabul , Turkey</p>
-                <p>Flights . Hotels . Resorts</p>
+              <div className="common">
+                <p className="toopp">Istanabul , Turkey</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div id="comp_2"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">Sydney , Australia</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div id="comp_3"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">Baku , Azerbaija</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div id="comp_4"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">Male , Maldives</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div id="comp_5"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">Paris , France</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div id ="comp_6"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">New York , US</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div id="comp_7"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">London , UK</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements">
               <div  id="comp_8"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">Tokyo , Japan</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
             <div className="h_city_grid_elements" >
               <div id="comp_9"></div>
-              <div>
-                <p></p>
-                <p></p>
+              <div className="common">
+                <p className="toopp">Dubai , UAE</p>
+                <p className="bottttom">Flights . Hotels . Resorts</p>
               </div>
             </div>
           </div>
@@ -134,8 +134,8 @@ export default function Home() {
           </div>
           <div className="h_review_section">
             <div className="h_review_section_elements" id = "hr1" ></div>
-            <div className="h_review_section_elements"></div>
-            <div className="h_review_section_elements"></div>
+            <div className="h_review_section_elements" id = "hr2"></div>
+            <div className="h_review_section_elements" id = "hr3"></div>
           </div>
         </div>
       </body>

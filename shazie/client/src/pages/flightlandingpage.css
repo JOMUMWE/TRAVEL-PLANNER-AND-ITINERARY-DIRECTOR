@@ -1,0 +1,4 @@
+.flpdisplay{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
