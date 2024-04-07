@@ -43,7 +43,7 @@ export default function Hotels() {
       <div className="w-full mt-16" id="herocontainerhotel">
         <Navbar log={logged} flights={false} hotels={true} />
         <header className="h-[80vh]">
-          <section id="herotext" className="text-white h-full w-full">
+          <section id="herotext" className="text-white h-[80%] w-full">
             <div className="text-5xl w-2/4 tracking-wider leading-normal theeffect">
               <h1 className="font-bold mynicefont ">
                 Make your travel <br />
@@ -65,13 +65,15 @@ export default function Hotels() {
               <div className="flex flex-row items-center justify-between text-white absolute bottom-24 left-6 w-[84%]">
                 <div>
                   <h1 className="text-2xl font-bold">{item.place}</h1>
-                  <p className="text-[0.85rem] text-nowrap">{item.description}</p>
+                  <p className="text-[0.85rem] text-nowrap">
+                    {item.description}
+                  </p>
                 </div>
                 <p className="text-2xl self-end font-semibold text-nowrap">
                   $ {item.price}
                 </p>
               </div>
-              <button className="absolute bottom-6 left-6 bg-[#8DD3BB] h-14 mt-8 rounded font-bold hover:bg-[#82CBB2] w-5/6" >
+              <button className="absolute bottom-6 left-6 bg-[#8DD3BB] h-14 mt-8 rounded font-bold hover:bg-[#82CBB2] w-5/6">
                 Book Hotel
               </button>
             </div>

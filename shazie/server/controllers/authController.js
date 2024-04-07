@@ -166,6 +166,7 @@ const getflight = async(req,res) =>{
     departureDate: Depature,
     adults: AdultNumber,
   });
+  console.log(body.data[0].itineraries);
   return res.json(body.data)
   }catch(error){
     console.log(error)

@@ -10,25 +10,24 @@ body {
   margin: 28px;
   margin-top: -48px;
   height: 80vh;
+  overflow: hidden;
+  z-index: -1;
 }
 
 .h_nav {
   background-color: white;
   margin: 0 auto;
-  margin-top: -90px;
+  margin-top: -120px;
   margin-bottom: 20px;
   border-radius: 13px;
   width: 75%;
-  height: 200px;
 }
 
 .h_city{
-    margin-top: 200px ;
-
+    margin-top: 80px ;
     margin-bottom: 60px;
 }
 .h_city_top {
-  background-color: white;
   width: 75%;
   height: 70px;
   margin: 0 auto;
@@ -41,9 +40,9 @@ body {
   display: inline;
   border-style: solid;
   border-color: #3eb489;
-  border-width: 2px;
+  border-width: 1px;
   text-align: center;
-  padding: 5px;
+  @apply rounded px-4 py-3 font-semibold text-sm hover:ring-2 hover:ring-[#3eb489] hover:shadow-xl;
 }
 .h_city_top > div > h3 {
   font-size: 24px;
@@ -67,9 +66,9 @@ body {
   height: 131px;
   box-shadow: whitesmoke;
   border-radius: 13px;
-
   display: grid;
   grid-template-columns: 2fr 3fr;
+  @apply shadow-md;
 }
 #comp_1{
   background-image: url("../assets/tienko-dima-DgoZcf_M0Kc-unsplash.jpg");
@@ -78,7 +77,8 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
-
+  margin: 13px;
+  
 }
 #comp_2{
   background-image: url("../assets/dan-freeman-7Zb7kUyQg1E-unsplash.jpg");
@@ -87,6 +87,8 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
+
 }
 #comp_3{
   background-image: url("../assets/gerhard-reus-vPZ7YvpK8Sc-unsplash.jpg");
@@ -95,6 +97,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 #comp_4{
   background-image: url("../assets/ahmed-yaaniu-05A3CzImkhw-unsplash.jpg");
@@ -103,6 +106,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 #comp_5{
   background-image: url("../assets/anthony-delanoix-QAwciFlS1g4-unsplash.jpg");
@@ -111,6 +115,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 #comp_6{
   background-image: url("../assets/istockphoto-946087016-1024x1024.jpg");
@@ -119,6 +124,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 #comp_7{
   background-image: url("../assets/alex-azabache-W1Y4Y_DBGKw-unsplash.jpg");
@@ -127,6 +133,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 #comp_8{
   background-image: url("../assets/david-edelstein-N4DbvTUDikw-unsplash.jpg");
@@ -135,6 +142,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 #comp_9{
   background-image: url("../assets/christoph-schulz-7tb-b37yHx4-unsplash.jpg");
@@ -143,6 +151,7 @@ body {
   background-size:cover;
   background-repeat: no-repeat;
   border-radius: 13px;
+  margin: 13px;
 }
 .common{
   @apply flex flex-col justify-center items-start gap-3 pl-4
@@ -237,7 +246,6 @@ body {
 .h_review_top {
   width: 100%;
   display: flex;
-  background-color: white;
   height: 70px;
   margin-left: 0px;
   margin-bottom: 20px;
@@ -295,3 +303,8 @@ body {
   background-size:contain;
   background-repeat: no-repeat;
 }
+/* #herotext{
+  position: absolute;
+  height: 82%;
+  width: 100%;
+} */

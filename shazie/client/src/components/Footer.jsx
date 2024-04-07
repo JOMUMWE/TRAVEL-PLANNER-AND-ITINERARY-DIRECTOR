@@ -5,7 +5,7 @@ export default function Footer() {
     <footer>
       <div className="newsletter">
         <img src={photo1} alt="mail box" id="jomumuimg" />
-        <h1 className="font-semibold text-5xl">
+        <h1 className="font-semibold text-5xl mt-3">
           Subscribe <br />
           Newsletter
         </h1>
@@ -15,10 +15,10 @@ export default function Footer() {
           Get inspired! Receive travel discounts, tips and behind the scenes
           stories
         </span>
-        <form action="#" method="post" />
-        <input id="input1" type="email" placeholder="Your email address" />
+        <form action="#" method="post" >
+        <input type="email" placeholder="Your email address" className='rounded-sm ' />
         <input type="submit" name="Subscribe" id="send" />
-        <form />
+        </form>
       </div>
       <div className="flex-container pb-10 pt-24">
         <div className="flex flex-row ">

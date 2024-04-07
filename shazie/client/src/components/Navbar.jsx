@@ -33,16 +33,16 @@ function Navbar(props) {
     <nav
       className={
         props.home
-          ? " w-full pt-5 h-16 text-sm font-semibold text-white shadow-md top-0 left-0 right-0 z-50"
-          : " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50 bg-white" 
-        }
+          ? " w-full pt-5 h-16 text-sm font-semibold text-white top-0 left-0 right-0 z-50"
+          : " w-full pt-5 h-16 text-sm font-semibold text-[#112211] shadow-md fixed top-0 left-0 right-0 z-50 bg-white"
+      }
     >
       <div className=" w-9/12 mx-auto flex flex-row justify-between h-full my-0">
         <div className="flex flex-nowrap h-full">
           <Link
             to="/flights"
             className={
-              props.flights
+              props.flights || props.flightlandinggpage
                 ? " mr-4 h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px] border-b-[#8DD3BB] border-b-[3px]"
                 : "mr-4 h-full flex flex-nowrap hover:border-b-[#8DD3BB] hover:border-b-[3px]"
             }
@@ -80,7 +80,7 @@ function Navbar(props) {
             <Link
               to="/register"
               className={
-                props.home 
+                props.home
                   ? "bg-white text-[#112211] px-5 py-2 rounded hover:bg-slate-200"
                   : " bg-[#112211] text-white px-5 py-2 rounded"
               }
