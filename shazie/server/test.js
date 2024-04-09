@@ -49,13 +49,20 @@ var amadeus = new Amadeus({
 //   });
 
   // Find the cheapest flights from SYD to BKK
-amadeus.shopping.flightOffersSearch.get({
-  originLocationCode: 'SYD',
-  destinationLocationCode: 'BKK',
-  departureDate: '2024-04-01',
-  adults: '1'
-}).then(function (response) {
-  console.log(response.body);
-}).catch(function (response) {
-  console.error(response);
-})
+// amadeus.shopping.flightOffersSearch.get({
+//   originLocationCode: 'SYD',
+//   destinationLocationCode: 'BKK',
+//   departureDate: '2024-04-01',
+//   adults: '1'
+// }).then(function (response) {
+//   console.log(response.body);
+// }).catch(function (response) {
+//   console.error(response);
+// })
+amadeus.referenceData.locations.hotel
+  .get({
+    keyword: "PARI",
+    subType: "HOTEL_GDS",
+  })
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err));

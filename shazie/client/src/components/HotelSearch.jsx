@@ -1,7 +1,8 @@
 import { FaBuilding, FaBed, FaCircleChevronDown } from "react-icons/fa6";
-
+import { useState } from "react";
 
 export default function HotelSearchBar(props) {
+  
   return (
     <form
       className={

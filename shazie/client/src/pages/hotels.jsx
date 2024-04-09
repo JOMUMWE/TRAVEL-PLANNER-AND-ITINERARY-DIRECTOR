@@ -43,7 +43,7 @@ export default function Hotels() {
       <div className="w-full mt-16" id="herocontainerhotel">
         <Navbar log={logged} flights={false} hotels={true} />
         <header className="h-[80vh]">
-          <section id="herotext" className="text-white h-[80%] w-full">
+          <section id="herotext" className="text-white h-full w-full">
             <div className="text-5xl w-2/4 tracking-wider leading-normal theeffect">
               <h1 className="font-bold mynicefont ">
                 Make your travel <br />

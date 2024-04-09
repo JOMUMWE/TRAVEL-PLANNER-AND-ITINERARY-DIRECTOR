@@ -3,7 +3,19 @@ const { hashPassword, comparePassword } = require("../helpers/auth");
 const jwt = require("jsonwebtoken");
 
 const test = (req, res) => {
-  res.json("test is working");
+  var Amadeus = require("amadeus");
+
+  var amadeus = new Amadeus({
+    clientId: "uRN292AgotWGG0mxFNWyR81AEAOqcmup",
+    clientSecret: "eFPH1f4VpRRU0260",
+  });
+  amadeus.referenceData.locations.hotel
+    .get({
+      keyword: "PARI",
+      subType: "HOTEL_GDS",
+    })
+    .then((response) => res.json(response))
+    .catch((err) => console.error(err));
 };
 
 const getprofpic = async (req,res) => {
@@ -165,6 +177,7 @@ const getflight = async(req,res) =>{
     destinationLocationCode: flightTo,
     departureDate: Depature,
     adults: AdultNumber,
+    max: '5',
   });
   console.log(body.data[0].itineraries);
   return res.json(body.data)

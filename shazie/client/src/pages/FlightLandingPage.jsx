@@ -9,7 +9,21 @@ import { useSearchParams } from "react-router-dom";
 
 export default function Home() {
   const [queryParameters] = useSearchParams();
+  const Depature = queryParameters.get("depature")
+  const From = queryParameters.get("from")
+  const To = queryParameters.get("to")
+  const No = queryParameters.get("AdultNumber");
   const [user, setUser] = useState("");
+  const [Data, setData] = useState({})
+  axios.post("/getflight", {
+      From,
+      To,
+      Depature,
+      No,
+    }).then(({data})=>{
+      setData(data)
+    }).catch((error)=>{console.log(error)})
+  console.log(Data)
   useEffect(() => {
     if (!user) {
       axios.get("/profile").then(({ data }) => {
@@ -24,12 +38,7 @@ export default function Home() {
       <Navbar log={logged} flightlandinggpage={true} />
       <FlightSearchBar flightlandinggpage={true} />
       <div>
-        <p>Departure={queryParameters.get("depature")}</p>
-        <p>arrival={queryParameters.get('arrival')}</p>
-        <p>price = {queryParameters.get("price")}</p>
-        <p>duration = {queryParameters.get("duration")}</p>
-        <p>stops={queryParameters.get("stops")}</p>
-        <p>bookable seats={queryParameters.get('numberOfBookableSeats')}</p>
+        <p></p>
       </div>
       <div className="flpdisplay w-[75.5%] mx-auto my-20">
         <div className="filter">

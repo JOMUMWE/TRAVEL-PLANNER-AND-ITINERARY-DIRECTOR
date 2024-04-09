@@ -57,39 +57,16 @@ export default function FlightSearchBar(props) {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const { data } = await axios.post("/getflight", {
-        flightFrom,
-        flightTo,
-        Depature,
-        AdultNumber,
-      });
-      console.log(data);
-      if (data.length == 0) {
+      // const { data } = await axios.post("/getflight", {
+      //   flightFrom,
+      //   flightTo,
+      //   Depature,
+      //   AdultNumber,
+      // });
         navigate("/FlightLandingPage?error='result not found'");
-      } else {
         let urlString = "/FlightLandingPage?";
-        let s =
-          "depature=" +
-          data[0].itineraries[0].segments[0].departure.at +
-          "&arrival=" +
-          data[0].itineraries[0].segments[0].arrival.at +
-          "&stops=" +
-          data[0].itineraries[0].segments[0].numberOfStops +
-          "&price=" +
-          data[0].price.total +
-          "&currency=" +
-          data[0].price.currency +
-          "&numberOfBookableSeats=" +
-          data[0].numberOfBookableSeats +
-          "&duration=" +
-          data[0].itineraries[0].segments[0].duration;
-        urlString += s;
+        urlString += "from="+ flightFrom+"&to="+flightTo+"&departure="+ Depature +"&AdultNumber=" + AdultNumber +"&return=" +Return
         navigate(urlString);
-      }
-    } catch (error) {
-      console.log(error);
-    }
   };
   return (
     <>
